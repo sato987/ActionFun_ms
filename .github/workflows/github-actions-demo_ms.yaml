@@ -24,5 +24,7 @@ jobs:
         run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
-
-          
+      
+      - name: echo github.reqository 
+         echo ${{ github.repository }} 
+        
