@@ -1,7 +1,8 @@
 name: 04_Reusable_workflow
 
 on:
-  workflow_call:
+  workflow_dispatch:
+  # workflow_call:
     inputs:
       who-to-greet:
         description: 'The person to greet'
@@ -15,3 +16,4 @@ jobs:
     steps:
       - name: Greet someone
         run: echo "Hello ${{ inputs.who-to-greet }}"
+
