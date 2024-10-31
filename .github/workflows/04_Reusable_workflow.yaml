@@ -1,16 +1,20 @@
 name: 04_Reusable_workflow
 
 on:
-  workflow_dispatch:
-  # workflow_call:
+  # workflow_dispatch:
+  workflow_call:
     inputs:
       who-to-greet:
         description: 'The person to greet'
         type: string
         required: true
         default: World
-
+    outputs:
+      current-time:
+        description: 'The time when greeting.'
+        value: ${{ jobs.reusable-job.outputs.current-time }}
     
+        
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
@@ -24,4 +28,6 @@ jobs:
       - name: Set time
         id: time
         run: echo "time=$(date)"
+
+    
    
