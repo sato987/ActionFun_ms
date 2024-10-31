@@ -17,3 +17,8 @@ jobs:
       - name: Greet someone
         run: echo "Hello ${{ inputs.who-to-greet }}"
 
+      - name: Set time
+        id: time
+        run: echo "time=$(date)"
+             echo "adding 1"
+
